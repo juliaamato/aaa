@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 
 import dev.julia.controller.StartupController;
 import dev.julia.entity.*;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -24,6 +26,7 @@ import javax.ws.rs.core.Response;
 
 @Path("/startup")
 public class StartupResource {
+    StartupController startupController = new StartupController();
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -41,14 +44,14 @@ public class StartupResource {
         return Startup.find("localizacao", localizacao).list();
     }
 
-    // @Path("/filtrofuncionarios")
-    // @PUT
-    // @Produces(MediaType.APPLICATION_JSON)
-    // @Consumes(MediaType.TEXT_PLAIN)
-    // public List<Startup> searchStartupByFuncionarios(String qtdFuncionarios) {
-    //     System.out.println("qtdddd pegouuu");
-    //     return Startup.find ("qtdFuncionarios", Integer.parseInt(qtdFuncionarios)).list();
-    // }
+    @Path("/filtrofuncionarios")
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
+    public List<Startup> searchStartupByFuncionarios(String qtdFuncionarios) {
+        System.out.println("PQPPPPP" + startupController.findByQtdFuncionario(Startup.listAll(), Integer.parseInt(qtdFuncionarios)));
+        return startupController.findByQtdFuncionario(Startup.listAll(), Integer.parseInt(qtdFuncionarios));
+    }
 
 
     @Path("/add")
@@ -58,7 +61,6 @@ public class StartupResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public void createStartup(Startup startup) {
         System.out.println("funcionou o post tb");
-        StartupController startupController = new StartupController();
         startupController.create(startup);
     }  
 }

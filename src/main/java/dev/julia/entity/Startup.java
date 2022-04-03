@@ -20,6 +20,7 @@ public class Startup extends PanacheEntity{
     
     private int rankk;
     
+    
 
     public String getNome() {
         return nome;
