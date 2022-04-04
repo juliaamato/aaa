@@ -1,1 +1,1 @@
---insert into Startup (id, nome, qtdFuncionarios, industria, localizacao, descricao, rankk) values (nextval('hibernate_sequence'), 'aa', 1, 'teste', 'oi', 'opa', 10);
+--insert into Startup (id, nome, qtdFuncionarios, industria, localizacao, descricao, rank) values (nextval('hibernate_sequence'), 'aa', 1, 'teste', 'oi', 'opa', 10);

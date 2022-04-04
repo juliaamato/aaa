@@ -18,7 +18,7 @@ public class Startup extends PanacheEntity{
     
     private String descricao;
     
-    private int rankk;
+    private int rank;
     
     
 
@@ -63,20 +63,14 @@ public class Startup extends PanacheEntity{
     }
 
     public int getRank() {
-        return rankk;
+        return rank;
     }
 
     public void setRank(int rank) {
-        this.rankk = rank;
+        this.rank = rank;
     }
 
-    public static Object find(String string, int parseInt) {
-        return null;
-    }
-
-    public static Object find(String string, int parseInt) {
-        return null;
-    }
+    
     
     
 }

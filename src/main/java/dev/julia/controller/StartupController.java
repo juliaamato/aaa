@@ -33,4 +33,14 @@ public class StartupController {
         return result;
     }
 
+    public Startup findById (List<Startup> startups, Long id){
+        for (Startup startup : startups) {
+            if(startup.id == id){
+                System.out.println("IF");
+                return startup;
+            }
+        }
+        return null;
+    }
+
 }

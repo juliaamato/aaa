@@ -53,6 +53,15 @@ public class StartupResource {
         return startupController.findByQtdFuncionario(Startup.listAll(), Integer.parseInt(qtdFuncionarios));
     }
 
+    @Path("/filtroid")
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
+    public Startup searchStartupById(String id) {
+        return startupController.findById(Startup.listAll(), Long.parseLong(id));
+    }
+
+    
 
     @Path("/add")
     @POST
