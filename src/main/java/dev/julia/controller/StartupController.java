@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import dev.julia.dao.StartupDao;
 import dev.julia.entity.Startup;
 
 public class StartupController {
+    StartupDao startupDao = new StartupDao();
+
+    public List<Startup> listStartup() {
+        List<Startup> startups = startupDao.listStartup();
+        return startups;
+    } 
 
     public void create (Startup startup){
         System.out.println("Controller" + startup.getNome());     
