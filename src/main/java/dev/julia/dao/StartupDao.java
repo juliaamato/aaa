@@ -20,6 +20,7 @@ public class StartupDao {
         startup.setIndustria(startup.getIndustria());
         startup.setLocalizacao(startup.getLocalizacao());
         startup.setRank(startup.getRank());
+        startup.setcategoria(startup.getCategoria());
         startup.persist();
     }
 

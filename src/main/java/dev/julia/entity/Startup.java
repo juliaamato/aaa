@@ -19,6 +19,8 @@ public class Startup extends PanacheEntity{
     private String descricao;
     
     private int rank;
+
+    private String categoria;
     
     
 
@@ -70,7 +72,13 @@ public class Startup extends PanacheEntity{
         this.rank = rank;
     }
 
-    
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setcategoria(String categoria) {
+        this.categoria = categoria;
+    }
     
     
 }
