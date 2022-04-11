@@ -2,9 +2,15 @@ package dev.julia.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+
 import dev.julia.entity.Startup;
 
 public class StartupDao {
+    @Inject
+    private EntityManager em;
+    
     public List<Startup> listStartup() {
         return Startup.listAll();
     } 
