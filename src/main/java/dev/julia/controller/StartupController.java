@@ -12,7 +12,6 @@ public class StartupController {
 
     public List<Startup> listStartup() {
         List<Startup> startups = startupDao.listStartup();
-        System.out.println("aaaaaaaaaa + " +startups.size());
         return startups;
     } 
 
